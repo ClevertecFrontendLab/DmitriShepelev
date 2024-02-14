@@ -19,6 +19,11 @@
 .menuWrap {
     max-width: 208px;
 }
+
+:global li.ant-menu-item.ant-menu-item-only-child {
+    padding: 0  !important;
+}
+
 .logo {
     padding: 14px 46px 17px 29px;
     margin-bottom: 26px;

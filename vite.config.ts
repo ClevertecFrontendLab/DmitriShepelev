@@ -38,6 +38,7 @@ export default defineConfig({
                     'heading-3-size': '24px',
                     'layout-zero-trigger-width': '0',
                     'layout-zero-trigger-height': '0',
+                    '@menu-item-padding': '0 8px',
                 },
                 javascriptEnabled: true,
             },

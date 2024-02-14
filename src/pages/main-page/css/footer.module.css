@@ -17,6 +17,9 @@
         gap: 24px;
         :global .ant-card {
             order: -1;
+            width: 100%;
+            text-align: center;
+            cursor: pointer;
         }
     }
 }
