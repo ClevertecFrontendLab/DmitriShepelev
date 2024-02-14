@@ -5,17 +5,10 @@ import {
     AndroidFilled,
     AppleFilled,
     CalendarTwoTone,
-    HeartOutlined,
     HeartTwoTone,
     IdcardOutlined,
-    MenuFoldOutlined,
-    MenuUnfoldOutlined,
     SettingOutlined,
-    TrophyOutlined,
     TrophyTwoTone,
-    UploadOutlined,
-    UserOutlined,
-    VideoCameraOutlined,
 } from '@ant-design/icons';
 import Text from 'antd/lib/typography';
 
@@ -26,7 +19,7 @@ import footer from './css/footer.module.css';
 
 import FitLogo from '@components/svgr/fitLogo';
 import Logo from '@components/svgr/LogoFull';
-import { Grid, Tag } from 'antd';
+import { Grid } from 'antd';
 import { Footer } from 'antd/lib/layout/layout';
 import Meta from 'antd/lib/card/Meta';
 import ExitLogo from '@components/svgr/exitLogo';
@@ -38,43 +31,15 @@ const { Header, Sider, Content } = Layout;
 export const MainPage: React.FC = () => {
     const [collapsed, setCollapsed] = useState(false);
     const screens = useBreakpoint();
-    const windowOuterHeight = window.outerHeight;
-    console.log(windowOuterHeight);
-    let scrollHeight = Math.max(
-        document.body.scrollHeight,
-        document.documentElement.scrollHeight,
-        document.body.offsetHeight,
-        document.documentElement.offsetHeight,
-        document.body.clientHeight,
-        document.documentElement.clientHeight,
-    );
 
-    console.log('Полная высота документа с прокручиваемой частью: ' + scrollHeight);
     const toggleCollapsed = () => {
         setCollapsed((collapsed) => !collapsed);
     };
 
-    const testAttr = { 'data-test-id': 'sider-switch' };
-    const triger = React.createElement(collapsed ? MenuUnfoldOutlined : MenuFoldOutlined, {
-        className: main.trigger,
-        style: {
-            width: 20,
-            height: 66,
-        },
-        onClick: () => setCollapsed(!collapsed),
-    });
-
     return (
-        <Layout
-            style={
-                {
-                    // position: 'relative',
-                    // height:  scrollHeight ,
-                }
-            }
-        >
+        <Layout>
             <div className={cn(main.container)}>
-                <img src='/Main_page_light.png' alt='' />
+                {/* <img src='/Main_page_light.png' alt='' /> */}
                 <Sider
                     collapsedWidth={screens.sm ? 64 : 0}
                     trigger={
@@ -98,7 +63,6 @@ export const MainPage: React.FC = () => {
                                           display: 'flex',
                                           position: 'absolute',
                                           bottom: '11px',
-                                          //   left: '-84px',
                                           right: '31px',
                                       }
                             }
@@ -139,7 +103,6 @@ export const MainPage: React.FC = () => {
                             })}
                         </div>
                         <Menu
-                            //style={{backgroundColor: '#fff'}}
                             inlineIndent={18}
                             theme='light'
                             mode='inline'
@@ -148,7 +111,6 @@ export const MainPage: React.FC = () => {
                                 color: '#262626',
                                 padding: !screens.sm ? '8px' : 'initial',
                             }}
-                            // defaultSelectedKeys={['1']}
                             items={[
                                 {
                                     key: '1',
@@ -182,67 +144,27 @@ export const MainPage: React.FC = () => {
                                     label: 'Профиль',
                                     style: { padding: !screens.sm ? '0' : '0 16px' },
                                 },
-                                // {
-                                //     style: {
-                                //         position: 'absolute',
-                                //         width: '106px',
-                                //         height: '1px',
-                                //         background: '#fff',
-                                //         bottom: '45px',
-                                //         left: '0',
-                                //         boxShadow: '0 2px 8px 0 rgba(0, 0, 0, 0.15)',
-                                //     },
-                                //     type: 'divider',
-                                // },
                             ]}
                         />
                     </div>
-
-                    {/* {
-                     React.createElement(collapsed ? MenuUnfoldOutlined : MenuFoldOutlined, {
-                         className: main.trigger,
-                         onClick: () => setCollapsed(!collapsed),
-                     })} */}
                     <Trigger
                         isCollapsed={collapsed}
                         onTrigger={toggleCollapsed}
                         sm={screens.sm ? true : false}
                     />
                 </Sider>
-                {/* {React.createElement(collapsed ? MenuUnfoldOutlined : MenuFoldOutlined, {
-                    className: main.trigger,
-                    style: {
-                        width: 20,
-                        height: 66,
-                        // position: 'relative',
-                        // top: '46.8%',
-                    },
-                    onClick: () => setCollapsed(!collapsed),
-                })} */}
-                <Layout
-                    className={cn(main.site)}
-                    // style={screens.sm ? { position: 'initial' } : { position: 'absolute' }}
-                    // style={screens.sm ? { position: 'initial' } : { position: 'absolute' }}
-                >
+                <Layout className={cn(main.site)}>
                     <Header>
                         <div className={cn(header.container)}>
                             <Breadcrumb>Главная</Breadcrumb>
                             <div className={cn(header.inner)}>
-                                <h1
-                                    className={cn(header.title)}
-                                    // {screens.lg ? level={3} : level={3}}
-                                    // level={screens.lg ? 1 : 3}
-                                    // style={{fontWeight: 700}}
-                                >
+                                <h1 className={cn(header.title)}>
                                     Приветствуем тебя в CleverFit — приложении,<br></br> которое
                                     поможет тебе добиться своей мечты!
                                 </h1>
-                                {/* <Title className='test'>Test</Title> */}
                                 <div className={cn(header.extra)}>
                                     <Button
-                                        // ghost={true}
                                         type='text'
-                                        // icon={<SettingOutlined />}
                                         icon={[
                                             screens.lg ? (
                                                 <SettingOutlined />
@@ -265,22 +187,20 @@ export const MainPage: React.FC = () => {
                             </div>
                         </div>
                     </Header>
-                    <Content
-                        className={cn(content.container)}
-                        // style={{ height: '100%' }}
-                    >
+                    <Content className={cn(content.container)}>
                         <Row>
                             <Col span={24}>
                                 <Card className={cn(content.card)}>
                                     <Text className={cn(content.text)}>
-                                        С CleverFit ты сможешь: <br></br>— планировать свои
-                                        тренировки на календаре, выбирая тип и уровень нагрузки; 
-                                        <br></br>— отслеживать свои достижения в разделе статистики,
-                                        сравнивая свои результаты с нормами и рекордами; <br></br>—
-                                        создавать свой профиль, где ты можешь загружать свои фото,
-                                        видео и отзывы о тренировках; <br></br>— выполнять
+                                        {' '}
+                                        С CleverFit ты сможешь: <br></br>— планировать свои
+                                        тренировки на календаре, выбирая тип и уровень нагрузки;
+                                        <br></br>— отслеживать свои достижения в разделе статистики,
+                                        сравнивая свои результаты с нормами и рекордами; <br></br>—
+                                        создавать свой профиль, где ты можешь загружать свои фото,
+                                        видео и отзывы о тренировках; <br></br>— выполнять
                                         расписанные тренировки для разных частей тела, следуя
-                                        подробным инструкциям и советам профессиональных тренеров.
+                                        подробным инструкциям и советам профессиональных тренеров.
                                     </Text>
                                 </Card>
                             </Col>
@@ -289,13 +209,12 @@ export const MainPage: React.FC = () => {
                             <Col span={24}>
                                 <Card className={cn(content.card)}>
                                     <Text className={cn(content.text_bold)}>
-                                        CleverFit — это не просто приложение, а твой личный помощник
-                                        в мире фитнеса. Не откладывай на завтра — начни
+                                        CleverFit — это не просто приложение, а твой личный помощник
+                                        в мире фитнеса. Не откладывай на завтра — начни
                                         тренироваться уже сегодня!
                                     </Text>
                                 </Card>
                             </Col>
-
                             <Col flex='1 1 198px'>
                                 <Card
                                     hoverable
@@ -396,12 +315,8 @@ export const MainPage: React.FC = () => {
                             Смотреть отзывы
                         </Button>
                         <Card
-                            //     style={{ width: '240px',
-                            //      minHeight: '127px'
-                            // }}
                             bodyStyle={{
                                 padding: '13px 26px',
-                                // textAlign: 'center',
                                 font: '400 16px / 1.3 "Inter", sans-serif',
                                 color: '#2F54EB',
                             }}
