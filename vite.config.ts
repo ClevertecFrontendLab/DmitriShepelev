@@ -21,4 +21,26 @@ export default defineConfig({
             '@utils': path.resolve(__dirname, 'src/utils'),
         },
     },
+    css: {
+        preprocessorOptions: {
+            less: {
+                modifyVars: {
+                    // 'primary-color': '#1DA57A',
+                    // 'heading-color': 'green',
+                    'layout-body-background': 'transparent',
+                    'menu-item-vertical-margin': '18px',
+                    'layout-header-background': '#f0f5ff',
+                    'layout-header-height': 'auto',
+                    'layout-header-padding': '16px 24px',
+                    'typography-title-font-weight': '700',
+                    'typography-title-margin-bottom': '0.3rem',
+                    'heading-1-size': '38px',
+                    'heading-3-size': '24px',
+                    'layout-zero-trigger-width': '0',
+                    'layout-zero-trigger-height': '0',
+                },
+                javascriptEnabled: true,
+            },
+        },
+    },
 });

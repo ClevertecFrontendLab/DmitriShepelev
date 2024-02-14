@@ -1,0 +1,16 @@
+import { SVGProps } from 'react';
+const exitLogo = (props: SVGProps<SVGSVGElement>) => (
+    <svg xmlns='http://www.w3.org/2000/svg' width={15} height={16} fill='none' {...props}>
+        <path
+            fill='#000'
+            d='M3.746 7.394V5.869a.08.08 0 0 0-.13-.064L.919 7.937a.08.08 0 0 0 0 .127l2.697 2.133c.052.042.13.004.13-.064V8.608h6.92V7.394h-6.92Z'
+        />
+        <path
+            fill='#000'
+            fillRule='evenodd'
+            d='M4.627.93h9.42a.5.5 0 0 1 .5.5v13.143a.5.5 0 0 1-.5.5h-9.42a.5.5 0 0 1-.5-.5v-3c0-.04.032-.072.072-.072H5.27c.04 0 .071.032.071.072v2.285h7.992V2.144H5.341V4.43c0 .039-.032.071-.071.071H4.199a.072.072 0 0 1-.072-.071v-3a.5.5 0 0 1 .5-.5Z'
+            clipRule='evenodd'
+        />
+    </svg>
+);
+export default exitLogo;
