@@ -1,0 +1,40 @@
+@import 'css/header.module.css';
+@import 'css/sider.module.css';
+
+.layout {
+    width: 100%;
+}
+.container {
+    min-height: 100%;
+    display: flex;
+    width: 1440px;
+    margin: 0 auto;
+    padding: 0;
+    background-image: url(/Main_page_light.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    position: relative;
+    img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        z-index: -1;
+    }
+}
+
+.site {
+    width: 100%;
+    background-color: transparent;
+}
+
+.header {
+    height: 168px;
+    padding: 16px 24px;
+    background-color: transparent;
+    width: 100%;
+    max-width: 100%;
+}

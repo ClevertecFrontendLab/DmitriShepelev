@@ -1,0 +1,22 @@
+.footer {
+    margin-top: 110px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    z-index: 1;
+    :global .ant-layout-footer {
+        padding: 42px 24px;
+    }
+
+    @media (max-width: 835px) {
+        margin-top: 315px;
+    }
+    @media (max-width: 720px) {
+        flex-direction: column;
+        align-items: center;
+        gap: 24px;
+        :global .ant-card {
+            order: -1;
+        }
+    }
+}

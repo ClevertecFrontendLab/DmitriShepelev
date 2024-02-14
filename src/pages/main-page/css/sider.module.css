@@ -1,0 +1,66 @@
+.sider {
+    padding: 30px 0 0;
+    box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.15);
+    position: relative;
+}
+.trigger {
+    position: absolute;
+    top: 46.8%;
+    right: -20px;
+    padding: 3px;
+    width: 20px;
+    height: 66px;
+    display: flex;
+    background: center / auto no-repeat url('/rectangle.svg');
+    @media (max-width: 575px) {
+        top: 24px;
+    }
+}
+.menuWrap {
+    max-width: 208px;
+}
+.logo {
+    padding: 14px 46px 17px 29px;
+    margin-bottom: 26px;
+}
+.logoCollapse {
+    padding: 18px 17.45px 20px 18px;
+}
+.logoClever {
+    display: inline;
+    opacity: 1;
+    visibility: visible;
+    transition-delay: 1s, 250ms;
+    transition-property: display, opacity;
+}
+.logoCleverCollapse {
+    transform: translateX(-5.5rem);
+    opacity: 0;
+    display: none;
+    transition: all 0.3s ease-in;
+}
+.logoFit {
+    transition: all 0.3s ease-in;
+    max-width: 35px;
+    max-height: 31px;
+}
+.logoFitCollapse {
+    padding: 0;
+}
+.iconFill {
+    svg {
+        path {
+            fill: #061178;
+        }
+    }
+}
+.iconFill2 {
+    svg {
+        path {
+            fill: #2f54eb;
+        }
+    }
+}
+.exitCollapsed {
+    display: none;
+}
